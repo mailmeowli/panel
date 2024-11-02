@@ -62,7 +62,7 @@ app.all('*', async (req, res) => {
 	res.status(403);
 	res.setHeader('Content-Type', 'text/html');
 
-	fs.createReadStream('./src/unauthorised.html').pipe(res);
+	fs.createReadStream('./assets/unauthorised.html').pipe(res);
 });
 
 app.listen(8000, async () => {
