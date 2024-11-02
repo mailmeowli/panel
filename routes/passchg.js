@@ -5,9 +5,6 @@ module.exports = {
 	method: 'get',
 	path: '/passchg',
 	async execute(req, res) {
-		console.log(req.query.pass);
-		console.log(req.cookies.token);
-
 		if (typeof req?.query?.pass !== 'string') {
 			return res.redirect('unauthorised');
 		}
