@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>meow.li user settings</title>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="meow.li user settings">
+		<meta name="author" content="Emilia">
+
+		<link rel="stylesheet" href="style.css">
+	</head>
+
+	<body>
+		<div id="main" class="container">
+			<center>
+				<span id="logo" class="ay">
+					meow.li
+				</span>
+			</center>
+
+			<center>
+				<p>
+					Please report any bugs to <a href="mailto:eqilia@meow.li">eqilia@meow.li</a>.<br>
+					Thank you!
+				</p>
+
+				<p id="invalid">
+					Invalid email and/or password was provided.
+				</p>
+
+				<form action="/login">
+					<label for="fname">E-mail:</label><br>
+					<input type="text" id="email" name="email"><br>
+
+					<label for="fname">Password:</label><br>
+  					<input type="password" id="pass" name="pass"><br>
+
+					<input type="submit" value="Log in">
+				</form>
+			</center>
+		</div>
+	</body>
+</html>

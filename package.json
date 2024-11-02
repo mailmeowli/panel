@@ -1,0 +1,14 @@
+{
+	"name": "meowlipanel",
+	"version": "1.0.0",
+	"main": "src/index.js",
+	"license": "SEE LICENSE IN <LICENSE>",
+	"dependencies": {
+		"bcrypt": "^5.1.1",
+		"burgerdatabase": "^0.1.3",
+		"cookie-parser": "^1.4.7",
+		"express": "^4.21.1",
+		"microtime": "^3.1.1",
+		"mutex-promise": "^0.1.0"
+	}
+}
