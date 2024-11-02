@@ -156,6 +156,50 @@ async function refashion() {
 	aMP.unlock();
 }
 
+async function logoutToken(token) {
+	await aMP.promise();
+	aMP.lock();
+
+	let clean = 0;
+
+	const tokens = db.get('tokens');
+	let tokensNew = [];
+
+	for (let i = 0; i < tokens.length; i++) {
+		if (tokens[i][2] === token) {
+			delete tokens[i];
+			break;
+		}
+	}
+
+	for (let i = 0; i < tokens.length; i++) {
+		if (tokens[i] === undefined) {
+			console.log('!');
+			continue;
+		}
+
+		tokensNew.push(tokens[i]);
+	}
+
+	db.set('tokens', tokensNew);
+
+	aMP.unlock();
+
+	return true;
+}
+
+async function isUserAdministrative(user) {
+	const a = db.get(`admin_${require('crypto').createHash('sha512').update(user).digest('hex')}`);
+
+	console.log(a);
+
+	if (a === undefined) {
+		return false;
+	}
+
+	return true;
+}
+
 module.exports = {
 	loadAccounts,
 	saveAccounts,
@@ -163,5 +207,7 @@ module.exports = {
 	changePass,
 	verifyToken,
 	createToken,
-	refashion
+	logoutToken,
+	refashion,
+	isUserAdministrative
 }
